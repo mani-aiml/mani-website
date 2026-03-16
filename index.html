@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mani Khanuja | Principal Generative AI Solutions Architect</title>
   <meta name="description" content="Mani Khanuja, Technical AI Leader and Principal Generative AI Solutions Architect at AWS with 20+ years of experience. Expert on scaling autonomous AI agents safely, AI governance, and strategic leadership." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+  <link rel="icon" type="image/png" href="favicon.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -195,20 +198,23 @@
 
 
     /* ── BOOKS ── */
-    .books__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-    .book-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; display: flex; gap: 26px; transition: all 0.25s; }
-    .book-card:hover { box-shadow: var(--shadow-h); }
-    .book-card__cover { flex-shrink: 0; width: 120px; height: 160px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 6px 8px 28px rgba(26,26,46,0.25); }
+    .books__grid { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+    .book-card { display: flex; flex-direction: column; align-items: center; max-width: 300px; text-align: center; }
+    .book-card__cover-wrap { position: relative; display: inline-block; margin-bottom: 24px; }
+    .book-card__cover { width: 220px; height: 300px; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 12px 18px 48px rgba(26,26,46,0.32); transition: transform 0.3s, box-shadow 0.3s; }
+    .book-card__cover:hover { transform: translateY(-6px) scale(1.02); box-shadow: 16px 24px 56px rgba(26,26,46,0.4); }
     .book-card__cover img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .book-cover-pub { background: linear-gradient(160deg, #1a3a5c 0%, #0f2233 100%); }
     .book-cover-upcoming { background: linear-gradient(160deg, #0d1b2e 0%, #1a2d44 100%); }
     .book-cover-text { text-align: center; padding: 10px; font-family: var(--font-serif); color: #fff; }
     .book-cover-text .icon { font-size: 1.8rem; margin-bottom: 6px; }
     .book-cover-text span { display: block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.04em; line-height: 1.3; }
-    .book-card__body { flex: 1; }
+    .book-card__plus { position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%); width: 36px; height: 36px; border-radius: 50%; background: var(--coral); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 300; line-height: 1; box-shadow: 0 4px 14px rgba(217,119,87,0.5); text-decoration: none; transition: background 0.2s, transform 0.2s; z-index: 2; }
+    .book-card__plus:hover { background: #c4623d; transform: translateX(-50%) scale(1.12); }
+    .book-card__body { padding-top: 12px; }
     .book-card__badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(217,119,87,0.12); color: var(--coral); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
-    .book-card__title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--slate); line-height: 1.3; margin-bottom: 10px; }
-    .book-card__desc { font-size: 0.865rem; color: var(--gray-soft); line-height: 1.65; margin-bottom: 18px; }
+    .book-card__title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--slate); line-height: 1.3; margin-bottom: 8px; }
+    .book-card__desc { font-size: 0.865rem; color: var(--gray-soft); line-height: 1.65; margin-bottom: 0; }
 
     /* ── RESEARCH ── */
     .research__grid { display: flex; flex-direction: column; gap: 18px; }
@@ -315,12 +321,44 @@
     }
     @media (max-width: 640px) {
       :root { --gap: 64px; }
+
+      /* Typography for mobile */
+      body { font-size: 0.9rem; }
+      .section-title { font-size: 1.6rem; }
+      h2 { font-size: 1.6rem; }
+      h3 { font-size: 1.1rem; }
+
+      /* Grid layouts */
       .videos__grid, .articles__grid { grid-template-columns: 1fr; }
       .speaking__grid { grid-template-columns: repeat(2, 1fr); }
       .about__stats-row { grid-template-columns: 1fr 1fr; }
       .about__right-col { flex-direction: column; }
       .about__photo { flex: none; }
       .cta-cards { flex-direction: column; align-items: stretch; }
+
+      /* Research cards - stack vertically */
+      .research-card { flex-direction: column; padding: 18px 16px; gap: 12px; }
+      .research-card__icon { width: 36px; height: 36px; flex-shrink: 0; }
+      .research-card__title { font-size: 0.9rem; }
+      .research-card__meta { font-size: 0.72rem; }
+      .research-card__desc { font-size: 0.8rem; }
+      .research-card__link { font-size: 0.75rem; }
+
+      /* Book cards - stack vertically */
+      .books__grid { gap: 48px; }
+      .book-card__cover { width: 160px; height: 220px; }
+      .book-card__title { font-size: 1rem; }
+      .book-card__desc { font-size: 0.82rem; }
+
+      /* AWS blog cards - stack vertically */
+      .aws-blog-card { flex-direction: column; padding: 16px 14px; gap: 10px; }
+      .aws-blog-card__icon { width: 36px; height: 36px; }
+      .aws-blog-card__icon svg { width: 18px; height: 18px; }
+      .aws-blog-card__source { font-size: 0.65rem; margin-bottom: 4px; }
+      .aws-blog-card__title { font-size: 0.9rem; margin-bottom: 4px; }
+      .aws-blog-card__desc { font-size: 0.8rem; }
+      .aws-blog-card__link { font-size: 0.75rem; }
+
       /* Stack gallery on mobile */
       .photos-grid { grid-template-columns: 1fr; }
       .photo-item--reinvent { grid-column: 1; aspect-ratio: 16/7; }
@@ -337,12 +375,12 @@
     <a href="#" class="nav__logo">Mani <span>Khanuja</span></a>
     <div class="nav__links">
       <a href="#about">About</a>
+      <a href="#books">Books</a>
       <a href="#videos">Videos</a>
       <a href="#articles">Articles</a>
-      <a href="#aws-blogs">AWS Blogs</a>
-      <a href="#books">Books</a>
       <a href="#research">Research</a>
       <a href="#speaking">Speaking</a>
+      <a href="#aws-blogs">AWS Blogs</a>
     </div>
     <a href="https://manikhanuja.substack.com" target="_blank" rel="noopener" class="btn btn--primary nav__cta" style="margin-left:16px; padding:9px 22px; font-size:0.84rem;">Subscribe</a>
     <button class="nav__hamburger" id="hamburger" aria-label="Menu">
@@ -352,12 +390,12 @@
 </nav>
 <div class="nav__drawer" id="drawer">
   <a href="#about" onclick="closeDrawer()">About</a>
+  <a href="#books" onclick="closeDrawer()">Books</a>
   <a href="#videos" onclick="closeDrawer()">Videos</a>
   <a href="#articles" onclick="closeDrawer()">Articles</a>
-  <a href="#aws-blogs" onclick="closeDrawer()">AWS Blogs</a>
-  <a href="#books" onclick="closeDrawer()">Books</a>
   <a href="#research" onclick="closeDrawer()">Research</a>
   <a href="#speaking" onclick="closeDrawer()">Speaking</a>
+  <a href="#aws-blogs" onclick="closeDrawer()">AWS Blogs</a>
   <a href="https://manikhanuja.substack.com" target="_blank" rel="noopener" class="btn btn--primary" style="width:fit-content">Subscribe</a>
 </div>
 
@@ -443,7 +481,7 @@
         </div>
         <div class="about__stats-row">
           <div class="stat-card"><div class="stat-card__num">20+</div><div class="stat-card__label">Years of Experience</div></div>
-          <div class="stat-card"><div class="stat-card__num">10+</div><div class="stat-card__label">Conferences</div></div>
+          <div class="stat-card"><div class="stat-card__num">100+</div><div class="stat-card__label">Conferences</div></div>
           <div class="stat-card"><div class="stat-card__num">2</div><div class="stat-card__label">Books</div></div>
           <div class="stat-card"><div class="stat-card__num">12+</div><div class="stat-card__label">Papers Reviewed</div></div>
         </div>
@@ -474,6 +512,49 @@
       <div class="photo-item photo-item--ghc">
         <img src="mani_images/ghc-2023-talk.jpeg" alt="Mani Khanuja at Grace Hopper Celebration 2023" />
         <div class="photo-item__caption">Grace Hopper Celebration 2023</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="section" id="books">
+  <div class="container">
+    <span class="tag">Books</span>
+    <h2 class="section-title">Published Works</h2>
+    <p class="section-sub">From high-performance computing to the agentic frontier, bridging theory and enterprise practice.</p>
+    <div class="books__grid">
+
+      <!-- Book 1: Upcoming -->
+      <div class="book-card">
+        <div class="book-card__cover-wrap">
+          <div class="book-card__cover book-cover-upcoming">
+            <img src="mani_images/book-ai-steering-wheel.png" alt="The AI Steering Wheel" />
+          </div>
+          <a href="https://www.ai-swf.com/" target="_blank" rel="noopener" class="book-card__plus" title="Visit Book Website">+</a>
+        </div>
+        <div class="book-card__body">
+          <span class="book-card__badge" style="background:rgba(217,119,87,0.18);">Upcoming</span>
+          <h3 class="book-card__title">The AI Steering Wheel</h3>
+          <p style="font-size:0.82rem;font-style:italic;color:var(--gray-soft);margin-bottom:8px;">Unified Framework for Scaling Generative and Agentic Systems</p>
+          <p class="book-card__desc">Three interlocking layers, Strategy, Operations, and Engineering, keep AI products aligned from first decision through last deployment. Co-authored with Dr. Fouad Bousetouane.</p>
+        </div>
+      </div>
+
+      <!-- Book 2: Published -->
+      <div class="book-card">
+        <div class="book-card__cover-wrap">
+          <div class="book-card__cover book-cover-pub">
+            <img src="mani_images/hpc_book.jpg" alt="Applied Machine Learning and High-Performance Computing on AWS" />
+          </div>
+          <a href="https://a.co/d/0de1GjWY" target="_blank" rel="noopener" class="book-card__plus" title="Get on Amazon">+</a>
+        </div>
+        <div class="book-card__body">
+          <span class="book-card__badge">Published</span>
+          <h3 class="book-card__title">Applied Machine Learning and High-Performance Computing on AWS</h3>
+          <p class="book-card__desc">A comprehensive guide to building, training, and deploying ML models at scale on AWS. Co-authored with Farooq Sabir, Shreyas Subramanian &amp; Trenton Potgieter.</p>
+        </div>
       </div>
 
     </div>
@@ -609,6 +690,71 @@
   </div>
 </section>
 
+<!-- RESEARCH -->
+<section class="section section--alt" id="research">
+  <div class="container">
+    <span class="tag">Research</span>
+    <h2 class="section-title">Research &amp; Publications</h2>
+    <p class="section-sub">Peer-reviewed papers advancing retrieval-augmented generation, agentic systems, and applied machine learning.</p>
+    <div class="research__grid">
+      <div class="research-card">
+        <div class="research-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="research-card__body">
+          <div class="research-card__title">Keyword Search is All You Need: Achieving RAG-Level Performance Without Vector Databases Using Agentic Tool Use</div>
+          <div class="research-card__meta">Mani Khanuja et al. · arXiv · arXiv:2602.23368</div>
+          <div class="research-card__desc">Demonstrates that agentic tool-use with traditional keyword search can match or exceed vector database retrieval in RAG pipelines, with significant cost and complexity advantages for enterprise deployments.</div>
+        </div>
+        <a href="https://arxiv.org/abs/2602.23368" target="_blank" rel="noopener" class="research-card__link">Read Paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="research-card">
+        <div class="research-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="research-card__body">
+          <div class="research-card__title">The Amazon Nova Family of Models: Technical Report and Model Card</div>
+          <div class="research-card__meta">Amazon · arXiv · arXiv:2506.12103</div>
+          <div class="research-card__desc">Presents Amazon Nova, a new generation of state-of-the-art foundation models delivering frontier intelligence and industry-leading price performance, including Nova Pro (multimodal), Nova Lite, Nova Micro, Nova Canvas (image generation), and Nova Reel (video generation). Covers benchmarking, agentic performance, long context, and safety.</div>
+        </div>
+        <a href="https://arxiv.org/pdf/2506.12103" target="_blank" rel="noopener" class="research-card__link">Read Paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="research-card" style="background:rgba(217,119,87,0.03);border-color:rgba(217,119,87,0.18);">
+        <div class="research-card__icon" style="background:rgba(217,119,87,0.14);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="research-card__body">
+          <div class="research-card__title">Peer Reviewer · WACV 2024, IEEE/CVF Winter Conference on Applications of Computer Vision</div>
+          <div class="research-card__meta">Primary Reviewer · 10,12 Papers Reviewed</div>
+          <div class="research-card__desc">Served as a primary reviewer for IEEE/CVF WACV 2024, contributing expert evaluation to advance the computer vision research community.</div>
+        </div>
+        <span class="research-card__link" style="color:var(--gray-lighter);cursor:default;">Peer Review</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="section section--dark" id="speaking">
+  <div class="container">
+    <span class="tag" style="background:rgba(217,119,87,0.2);">Speaking</span>
+    <h2 class="section-title">Conference Appearances</h2>
+    <p class="section-sub">Keynotes, deep-dives, and technical sessions at leading industry events worldwide.</p>
+    <div class="speaking__grid">
+      <div class="conf-badge"><div class="conf-badge__name">AWS Re:Invent</div><div class="conf-badge__year">2021 · 2022 · 2023 · 2024 · 2025</div></div>
+      <div class="conf-badge"><div class="conf-badge__name">Grace Hopper</div><div class="conf-badge__year">GHC 2023</div></div>
+      <div class="conf-badge"><div class="conf-badge__name">AI Engineer</div><div class="conf-badge__year">Summit 2025</div></div>
+      <div class="conf-badge"><div class="conf-badge__name">AWS NY Summit</div><div class="conf-badge__year">New York 2025</div></div>
+      <div class="conf-badge"><div class="conf-badge__name">Women in West</div><div class="conf-badge__year">2022</div></div>
+      <div class="conf-badge"><div class="conf-badge__name">+ Many More</div><div class="conf-badge__year">Worldwide</div></div>
+    </div>
+    <div style="margin-top:48px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="https://www.linkedin.com/in/manikhanuja/" target="_blank" rel="noopener" class="btn btn--outline-light">Invite Mani to Speak</a>
+      <a href="https://youtube.com/playlist?list=PLasVkjqu_zoaz5t5kpIK-ESryqOluVLZv" target="_blank" rel="noopener" class="btn btn--primary">Watch Past Talks</a>
+    </div>
+  </div>
+</section>
+
 <!-- AWS BLOGS -->
 <section class="section section--alt" id="aws-blogs">
   <div class="container">
@@ -678,114 +824,6 @@
         <span class="aws-blog-card__link">Read <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
-    </div>
-  </div>
-</section>
-
-<!-- BOOKS -->
-<section class="section" id="books">
-  <div class="container">
-    <span class="tag">Books</span>
-    <h2 class="section-title">Published Works</h2>
-    <p class="section-sub">From high-performance computing to the agentic frontier, bridging theory and enterprise practice.</p>
-    <div class="books__grid">
-      <div class="book-card">
-        <div class="book-card__cover book-cover-pub">
-          <img src="mani_images/hpc_book.jpg" alt="Applied Machine Learning and High-Performance Computing on AWS book cover" />
-        </div>
-        <div class="book-card__body">
-          <span class="book-card__badge">Published</span>
-          <h3 class="book-card__title">Applied Machine Learning and High‑Performance Computing on AWS</h3>
-          <p class="book-card__desc">A comprehensive guide to building, training, and deploying ML models at scale on AWS. Covers distributed training, feature stores, SageMaker, and production ML pipelines for enterprise workloads. Co-authored with Farooq Sabir, Shreyas Subramanian &amp; Trenton Potgieter.</p>
-          <a href="https://a.co/d/0de1GjWY" target="_blank" rel="noopener" class="btn btn--primary">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Get on Amazon
-          </a>
-        </div>
-      </div>
-      <div class="book-card">
-        <div class="book-card__cover book-cover-upcoming">
-          <img src="mani_images/book-ai-steering-wheel.png" alt="The AI Steering Wheel book cover" onerror="this.parentElement.innerHTML=document.getElementById('book-placeholder-tpl').innerHTML" />
-        </div>
-        <div class="book-card__body">
-          <span class="book-card__badge" style="background:rgba(217,119,87,0.18);">Upcoming</span>
-          <h3 class="book-card__title">The AI Steering Wheel</h3>
-          <p style="font-size:0.82rem;font-style:italic;color:var(--gray-soft);margin-bottom:10px;">Unified Framework for Scaling Generative and Agentic Systems</p>
-          <p class="book-card__desc">Three interlocking layers, Strategy, Operations, and Engineering, keep AI products aligned from the first decision through the last deployment. Co-authored with Dr. Fouad Bousetouane.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="https://www.ai-swf.com/" target="_blank" rel="noopener" class="btn btn--primary">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Book Website
-            </a>
-            <a href="https://www.ai-swf.com/" target="_blank" rel="noopener" class="btn btn--outline">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH -->
-<section class="section section--alt" id="research">
-  <div class="container">
-    <span class="tag">Research</span>
-    <h2 class="section-title">Research &amp; Publications</h2>
-    <p class="section-sub">Peer-reviewed papers advancing retrieval-augmented generation, agentic systems, and applied machine learning.</p>
-    <div class="research__grid">
-      <div class="research-card">
-        <div class="research-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <div class="research-card__body">
-          <div class="research-card__title">Keyword Search is All You Need: Achieving RAG-Level Performance Without Vector Databases Using Agentic Tool Use</div>
-          <div class="research-card__meta">Mani Khanuja et al. · arXiv · arXiv:2602.23368</div>
-          <div class="research-card__desc">Demonstrates that agentic tool-use with traditional keyword search can match or exceed vector database retrieval in RAG pipelines, with significant cost and complexity advantages for enterprise deployments.</div>
-        </div>
-        <a href="https://arxiv.org/abs/2602.23368" target="_blank" rel="noopener" class="research-card__link">Read Paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      <div class="research-card">
-        <div class="research-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <div class="research-card__body">
-          <div class="research-card__title">The Amazon Nova Family of Models: Technical Report and Model Card</div>
-          <div class="research-card__meta">Amazon · arXiv · arXiv:2506.12103</div>
-          <div class="research-card__desc">Presents Amazon Nova, a new generation of state-of-the-art foundation models delivering frontier intelligence and industry-leading price performance, including Nova Pro (multimodal), Nova Lite, Nova Micro, Nova Canvas (image generation), and Nova Reel (video generation). Covers benchmarking, agentic performance, long context, and safety.</div>
-        </div>
-        <a href="https://arxiv.org/pdf/2506.12103" target="_blank" rel="noopener" class="research-card__link">Read Paper <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      <div class="research-card" style="background:rgba(217,119,87,0.03);border-color:rgba(217,119,87,0.18);">
-        <div class="research-card__icon" style="background:rgba(217,119,87,0.14);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <div class="research-card__body">
-          <div class="research-card__title">Peer Reviewer · WACV 2024, IEEE/CVF Winter Conference on Applications of Computer Vision</div>
-          <div class="research-card__meta">Primary Reviewer · 10,12 Papers Reviewed</div>
-          <div class="research-card__desc">Served as a primary reviewer for IEEE/CVF WACV 2024, contributing expert evaluation to advance the computer vision research community.</div>
-        </div>
-        <span class="research-card__link" style="color:var(--gray-lighter);cursor:default;">Peer Review</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SPEAKING -->
-<section class="section section--dark" id="speaking">
-  <div class="container">
-    <span class="tag" style="background:rgba(217,119,87,0.2);">Speaking</span>
-    <h2 class="section-title">Conference Appearances</h2>
-    <p class="section-sub">Keynotes, deep-dives, and technical sessions at leading industry events worldwide.</p>
-    <div class="speaking__grid">
-      <div class="conf-badge"><div class="conf-badge__name">AWS Re:Invent</div><div class="conf-badge__year">2021 · 2022 · 2023 · 2024 · 2025</div></div>
-      <div class="conf-badge"><div class="conf-badge__name">Grace Hopper</div><div class="conf-badge__year">GHC 2023</div></div>
-      <div class="conf-badge"><div class="conf-badge__name">AI Engineer</div><div class="conf-badge__year">Summit 2025</div></div>
-      <div class="conf-badge"><div class="conf-badge__name">AWS NY Summit</div><div class="conf-badge__year">New York 2025</div></div>
-      <div class="conf-badge"><div class="conf-badge__name">Women in West</div><div class="conf-badge__year">2022</div></div>
-      <div class="conf-badge"><div class="conf-badge__name">+ Many More</div><div class="conf-badge__year">Worldwide</div></div>
-    </div>
-    <div style="margin-top:48px;display:flex;gap:12px;flex-wrap:wrap;">
-      <a href="https://www.linkedin.com/in/manikhanuja/" target="_blank" rel="noopener" class="btn btn--outline-light">Invite Mani to Speak</a>
-      <a href="https://youtube.com/playlist?list=PLasVkjqu_zoaz5t5kpIK-ESryqOluVLZv" target="_blank" rel="noopener" class="btn btn--primary">Watch Past Talks</a>
     </div>
   </div>
 </section>
