@@ -954,7 +954,7 @@
       const data = await res.json();
       if (!data.ok || !data.items?.length) throw new Error('No items returned');
 
-      const cards = data.items.slice(0, 3).map(item =>
+      const cards = data.items.slice(0, 5).map(item =>
         makeCard(item, '#f26522', 'Substack · Agentic Enterprise')
       ).join('');
       grid.insertAdjacentHTML('afterbegin', cards);
