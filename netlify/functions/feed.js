@@ -35,7 +35,7 @@ function parseRss(xml) {
   const items = [];
   let pos = 0;
 
-  while (items.length < 3) {
+  while (items.length < 5) {
     const start = xml.indexOf('<item>', pos);
     if (start === -1) break;
     const end = xml.indexOf('</item>', start);
