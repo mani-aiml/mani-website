@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" fill="none">
+  <defs>
+    <filter id="paperL" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="1.0"></feDisplacementMap>
+    </filter>
+  </defs>
+  <g transform="translate(10,20) scale(0.6)">
+    <circle cx="100" cy="100" r="86" stroke="#C8623A" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4" filter="url(#paperL)"></circle>
+    <circle cx="100" cy="100" r="72" fill="#F4ECE0" stroke="#2A2620" stroke-width="2.5" filter="url(#paperL)"></circle>
+    <g stroke="#2A2620" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="80" cy="113" r="14"></circle>
+    <line x1="93" y1="100" x2="93" y2="128"></line>
+    <line x1="93" y1="113" x2="106" y2="113"></line>
+    <path d="M 106 113 L 134 113 Q 134 100, 120 100 Q 105 100, 105 115 Q 105 130, 122 130 Q 132 130, 137 124"></path>
+  </g>
+    <circle cx="148" cy="62" r="6" fill="#C8623A"></circle>
+    <circle cx="62" cy="58" r="5" fill="#D9A55B"></circle>
+    <circle cx="40" cy="120" r="4" fill="#6B7F4A"></circle>
+  </g>
+  <text x="160" y="72" font-family="Fraunces, Georgia, serif" font-size="42" font-weight="700" fill="#2A2620" letter-spacing="-1">agentic</text>
+  <text x="160" y="118" font-family="Fraunces, Georgia, serif" font-size="42" font-weight="400" font-style="italic" fill="#C8623A" letter-spacing="-0.5">enterprise</text>
+  <path d="M 162 132 Q 250 138 380 130" stroke="#C8623A" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#paperL)"></path>
+</svg>
